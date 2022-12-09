@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*::before, *, *::after {
+  margin    : 0;
+  padding   : 0;
+  box-sizing: border-box;
+}
+
+body {
+  width      : 100%;
+  height     : 100vh;
+  font-family: 'Poppins';
+  font-weight: 500;
+  color      : #262626;
+}
+
+.container {
+  display              : grid;
+  grid-template-columns: 1fr;
+  grid-template-rows   : repeat(4, 1fr);
+  width                : 100%;
+  height               : 100%;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
+
+.container > div {
+  display    : grid;
+  place-items: center;
+}
+
+.colorContent {
+  display       : flex;
+  flex-direction: column;
+  width         : 13rem;
+  text-align    : center;
+}
+
+.colorContent .colorName {
+  margin-bottom   : .5rem;
+  padding         : .6rem 0;
+  border-radius   : .2rem;
+  background-color: #FFFFFF60;
+}
+
+.colorContent .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colorContent .buttons button {
+  width           : 6.2rem;
+  padding         : .6rem 0;
+  border          : none;
+  border-radius   : .2rem;
+  background-color: #FFFFFF60;
+  font-family     : 'Poppins';
+  font-weight     : 500;
+  text-transform  : uppercase;
+  color           : #262626;
+  letter-spacing  : .1rem;
+}
+
+.colorContent .buttons button:hover {
+  cursor: pointer;
+}
+
+.clicked {
+  animation-name           : clicked;
+  animation-duration       : .15s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-play-state     : running;
+}
+
+@keyframes clicked {
+  0% {
+    background-color: #FFFFFF60;
+  }
+
+  100% {
+    background-color: #00000020;
+  }
+}
